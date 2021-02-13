@@ -1,5 +1,5 @@
 import os
-from main import convert_webp_to_png, get_all_files
+from main import convert_webp_to_png, get_all_files, create_outputpath
 
 def test_converter():
     inputpath = "input_test/testimage.webp"
@@ -23,3 +23,11 @@ def test_get_all_files():
             print(all_files[i])
             assert False
     assert True
+
+def test_create_outputpath():
+    folder = "output_test"
+    filename = "testimage"
+    extension = "png"    
+    outputpath = "output_test\\testimage.png"
+    response = create_outputpath(folder, filename, extension)
+    assert outputpath == response
