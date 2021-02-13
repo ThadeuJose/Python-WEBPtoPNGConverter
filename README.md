@@ -1,2 +1,33 @@
 # Python-WEBPtoPNGConverter
 WEBP to PNG image converter write in Python
+
+# Environment 
+
+## Run Environment 
+venv\Scripts\activate
+
+## Quit Environment 
+deactivate
+
+## Run test 
+python -m pytest test.py
+
+
+# TODO 
+V1 
+
+- Convert all archives from folder input from webp to png 
+
+V2
+
+- Use a command line e pyinstaller 
+- Convert all archives from a folder to another folder
+
+# Sources
+Command Line ? https://codeburst.io/building-beautiful-command-line-interfaces-with-python-26c7e1bb54df
+
+pyinstaller - http://www.pyinstaller.org/
+
+Source 
+
+https://medium.com/@ajeet214/image-type-conversion-jpg-png-jpg-webp-png-webp-with-python-7d5df09394c9
