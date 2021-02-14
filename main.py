@@ -12,7 +12,15 @@ def get_all_files(path):
 def create_outputpath(folder, filename, extension):
     return join(folder, filename+"."+extension)
 
-inputpath = "input/1 - The Flight.webp"
-outputpath = "output/1 - The Flight.png"
+def convert_folder_webp_to_png(inputfolder, outputfolder):
+    EXTENSION = "png"
+    for file in get_all_files(inputfolder):        
+        new_file = file.replace("webp", "png")
+        convert_webp_to_png(join(inputfolder, file), join(outputfolder,new_file), EXTENSION)
+    
+
+inputpath = "input"
+outputpath = "output"
 file_extension = "png"
-convert_webp_to_png(inputpath, outputpath,file_extension)
+
+# convert_folder_webp_to_png(inputpath, outputpath)
