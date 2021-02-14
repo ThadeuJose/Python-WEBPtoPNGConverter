@@ -30,7 +30,7 @@ V2
 
 # Sources
 
-Testing stdout -  https://docs.pytest.org/en/stable/capture.html
+Testing stdout - https://docs.pytest.org/en/stable/capture.html
 
 https://codeburst.io/building-beautiful-command-line-interfaces-with-python-26c7e1bb54df
 
