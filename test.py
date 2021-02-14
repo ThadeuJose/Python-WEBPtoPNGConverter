@@ -1,7 +1,7 @@
 import os
 from unittest.mock import call
 import main
-from main import convert_webp_to_png, get_all_files, create_outputpath, convert_folder_webp_to_png
+from main import convert_webp_to_png, get_all_files, create_path, convert_folder_webp_to_png,get_filename
 
 
 
@@ -28,12 +28,12 @@ def test_get_all_files():
             assert False
     assert True
 
-def test_create_outputpath():
+def test_create_path():
     folder = "output_test"
     filename = "testimage"
     extension = "png"    
     outputpath = "output_test\\testimage.png"
-    response = create_outputpath(folder, filename, extension)
+    response = create_path(folder, filename, extension)
     assert outputpath == response
 
 def test_convert_folder_webp_to_png(mocker):
@@ -73,3 +73,9 @@ def test_convert_multiples_folder_webp_to_png(mocker):
              call(inputfolder + "\\testimage3.webp", outputfolder + "\\testimage3.png", extension),]
 
     main.convert_webp_to_png.assert_has_calls(calls)
+
+def test_get_filename():
+    assert get_filename("filename1.ext") == "filename1"
+
+def test_get_filename_multiples_ext():
+    assert get_filename("filename1.ext1.ext2") == "filename1"

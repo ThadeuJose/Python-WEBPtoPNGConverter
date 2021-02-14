@@ -20,7 +20,8 @@ V1
 
 V2
 
-- Use a command line and pyinstaller 
+- Use a command line 
+- Build with pyinstaller 
 - Convert all archives from a folder to another folder
 
 # Technical Debt 
@@ -28,6 +29,9 @@ V2
 - Show in the command line the current status
 
 # Sources
+
+Testing stdout -  https://docs.pytest.org/en/stable/capture.html
+
 https://codeburst.io/building-beautiful-command-line-interfaces-with-python-26c7e1bb54df
 
 [Pyinstaller](http://www.pyinstaller.org/)
