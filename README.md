@@ -12,6 +12,8 @@ deactivate
 ## Run test 
 python -m pytest test.py
 
+## Create the requirements file
+python -m pip freeze > requirements.txt
 
 # TODO 
 V1 
