@@ -1,34 +1,16 @@
-from PIL import Image
-from os import listdir
-from os.path import isfile, join
+import click 
 
-def convert_webp_to_png(inputpath, outputpath, file_extension):
-    MODE = "RGB"
-    im = Image.open(inputpath).convert(MODE)
-    im.save(outputpath, file_extension)
+@click.command()
+@click.option("-f","--filename", type=click.Path(exists=True), help="Input file")
+@click.option("-i","--inputfolder", type=click.Path(exists=True), help="Path of the input folder")
+@click.option("-o","--outputfolder", type=click.Path(exists=True), help="Path of the output folder")
+def cli(filename, inputfolder, outputfolder):
+    """
+    Program that convert images from webp to png 
+    """
+    print(filename)
+    print(inputfolder)
+    print(outputfolder)
 
-def get_all_files(path):
-    return [f for f in listdir(path) if isfile(join(path, f))]
-
-def create_path(folder, filename, extension):
-    return join(folder, filename + "." + extension)
-
-def get_filename(filename):
-    return filename[0:filename.find(".")]
-
-def convert_folder_webp_to_png(inputfolder, outputfolder):
-    EXTENSION = "png"
-    INPUT_EXTENSION = "webp"
-    OUTPUT_EXTENSION = "png"
-    for file in get_all_files(inputfolder):        
-        filename = get_filename(file)
-        convert_webp_to_png(create_path(inputfolder, filename, INPUT_EXTENSION), 
-                            create_path(outputfolder,filename, OUTPUT_EXTENSION), 
-                            EXTENSION)
-    
-
-inputpath = "input"
-outputpath = "output"
-file_extension = "png"
-
-convert_folder_webp_to_png(inputpath, outputpath)
+if __name__ == "__main__":
+    cli()
