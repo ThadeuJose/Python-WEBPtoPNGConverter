@@ -1,4 +1,4 @@
-from files import get_all_files, get_filename, create_path
+from files import get_all_files, get_filename, get_path, create_path
 
 def test_get_all_files():
     files = ["testimage.webp","testimage2.webp",
@@ -25,5 +25,11 @@ def test_create_path():
 def test_get_filename():
     assert get_filename("filename1.ext") == "filename1"
 
+def test_get_filename_from_full_path():
+    assert get_filename("mylibrary\\filename1.ext1.ext2") == "filename1.ext1"
+
 def test_get_filename_multiples_ext():
-    assert get_filename("filename1.ext1.ext2") == "filename1"
+    assert get_filename("filename1.ext1.ext2") == "filename1.ext1"
+
+def test_get_path():
+    assert get_path("E:\\Imagens\\Avatar\\5.png") == "E:/Imagens/Avatar"

@@ -1,5 +1,6 @@
 from os import listdir
 from os.path import isfile, join
+from pathlib import Path
 
 EXTENSION = "png"
 INPUT_EXTENSION = "webp"
@@ -12,4 +13,7 @@ def create_path(folder, filename, extension):
     return join(folder, filename + "." + extension)
 
 def get_filename(filename):
-    return filename[0:filename.find(".")]
+    return Path(filename).stem
+
+def get_path(filename):
+    return Path(filename).parent.as_posix()
