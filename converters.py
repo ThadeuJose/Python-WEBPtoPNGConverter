@@ -2,7 +2,6 @@ from PIL import Image
 
 from files import EXTENSION, INPUT_EXTENSION, OUTPUT_EXTENSION, create_path, get_all_files, get_filename
 
-
 def convert_webp_to_png(inputpath, outputpath, file_extension):
     MODE = "RGB"
     im = Image.open(inputpath).convert(MODE)

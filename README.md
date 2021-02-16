@@ -27,22 +27,22 @@ V2
    
 - Build with pyinstaller 
 
-
 # Technical Debt 
 
-- Wrong inputs
-    - Test cli 
-        - Check if is a ouput folder is a folder
-            @click.option("-o","--output", type=click.Path(exists=True, file_okay=False), help="Path of the output folder")
-        - If output folder was not given, the program should put the image in the same place else should put in the output folder     
-				https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.suffix
-				https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.stem
-        - https://click.palletsprojects.com/en/7.x/testing/
-        - https://stackoverflow.com/questions/53203500/unittest-for-click-module         
 - Show in the command line the current status
     - progress bar or echo 
 
+- Make a proper fixture for test_cli
+
 # Sources
+
+[Unit test click 1](https://click.palletsprojects.com/en/7.x/testing/)
+
+[Unit test click 2](https://stackoverflow.com/questions/53203500/unittest-for-click-module)
+
+[Pathlib suffix](https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.suffix) 
+
+[Pathlib stem](https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.stem)
 
 [Testing stdout](https://docs.pytest.org/en/stable/capture.html)
 
