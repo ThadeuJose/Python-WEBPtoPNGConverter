@@ -24,7 +24,6 @@ V2
 
 - Use a command line 
     webpconverter -i input -o output
-    webpconverter -f 1-The Flight.png
    
 - Build with pyinstaller 
 
@@ -32,13 +31,16 @@ V2
 # Technical Debt 
 
 - Wrong inputs
-    - If Have a inputfolder have to have a output folder
     - Test cli 
+        - Check if is a ouput folder is a folder
+            @click.option("-o","--output", type=click.Path(exists=True, file_okay=False), help="Path of the output folder")
+        - If output folder was not given, the program should put the image in the same place else should put in the output folder     
+				https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.suffix
+				https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.stem
         - https://click.palletsprojects.com/en/7.x/testing/
-        - https://stackoverflow.com/questions/53203500/unittest-for-click-module
-        - If is file if is not raise exception 
-        - If is folder if is not raise exception 
+        - https://stackoverflow.com/questions/53203500/unittest-for-click-module         
 - Show in the command line the current status
+    - progress bar or echo 
 
 # Sources
 
