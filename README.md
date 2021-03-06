@@ -15,6 +15,10 @@ python -m pytest test.py
 ## Create the requirements file
 python -m pip freeze > requirements.txt
 
+## To Build 
+In a path without special character and space, venv and admin:
+pyinstaller main.py --onefile
+
 # TODO 
 V1 
 
@@ -22,10 +26,10 @@ V1
 
 V2
 
-- Use a command line 
-    webpconverter -i input -o output
+- ~~Use a command line~~ 
+    ~~webpconverter -i input -o output~~
    
-- Build with pyinstaller 
+- ~~Build with pyinstaller~~ 
 
 # Technical Debt 
 
